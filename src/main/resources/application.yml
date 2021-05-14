@@ -4,8 +4,18 @@ server:
 spring:
   application:
     name: config-service
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: rabbitmq
+    password: rabbitmq
   cloud:
     config:
       server:
         git:
           uri: https://github.com/ngc72938/spring-cloud-config-repository
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, busrefresh
